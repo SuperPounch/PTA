@@ -11,18 +11,19 @@ public class B1002 {
     public static void main(String[] args) {
         String str = new Scanner(System.in).nextLine();
         char[] chars = str.toCharArray();
+        //技巧1:得到标准输入的结果，转换成char字符数组
         int sum = 0;
         for (int i = 0; i < chars.length; i++) {
-            sum += chars[i] - '0';
+            sum += chars[i] - '0';//技巧2:通过-"0"来计算数字之和
         }
-        char[] c = (sum + "").toCharArray();
+        char[] c = (sum + "").toCharArray();//再将结果转换成字符来判断
         boolean flag = false;
         for (int i = 0; i < c.length; ++i) {
             if (flag) {
                 System.out.print(" ");
             }
             out(c[i]);
-            flag = true;
+            flag = true;//技巧3：借助for语句内部来解决中间添加空格的要求
         }
     }
 
@@ -58,7 +59,6 @@ public class B1002 {
             case '0':
                 System.out.print("ling");
                 break;
-
         }
     }
 }
